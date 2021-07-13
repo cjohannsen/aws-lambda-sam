@@ -1,14 +1,16 @@
-const { renderVueApp } = require("./src/vueRenderer")
+// const { renderVueApp } = require("./src/vueRenderer")
+const { renderCeres } = require("./src/ceresRenderer")
 
 let response
 
 exports.lambdaHandler = async (event, context) => {
     try {
-        const html = await renderVueApp()
+        // const html = await renderVueApp()
+        const ceresHTML = await renderCeres()
 
         response = {
             statusCode: 200,
-            body: html,
+            body: ceresHTML,
             headers: {
                 "content-type": [{ 
                     key: "Content-Type",
