@@ -8,16 +8,25 @@ exports.lambdaHandler = async (event, context) => {
         // const html = await renderVueApp()
         const ceresHTML = await renderCeres()
 
+        const obj = { len: ceresHTML.length };
+
         response = {
-            statusCode: 200,
-            body: ceresHTML,
-            headers: {
-                "content-type": [{ 
-                    key: "Content-Type",
-                    value: "text/html charset=utf-8"
-                }]
-            }
+            'statusCode': 200,
+            'body': JSON.stringify({
+                ceresHTML
+            })
         }
+
+        // response = {
+        //     statusCode: 200,
+        //     body: JSON.stringify(obj),
+        //     headers: {
+        //         "content-type": [{ 
+        //             key: "Content-Type",
+        //             value: "application/json charset=utf-8"
+        //         }]
+        //     }
+        // }
     } catch (err) {
         console.log(err)
         return err
