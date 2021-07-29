@@ -7,11 +7,10 @@
   "author": "SAM CLI",
   "license": "MIT",
   "dependencies": {
-    "@nuxt/vue-renderer": "^2.15.7",
-    "axios": "^0.21.1",
-    "html-minifier": "^4.0.0",
-    "vue": "^2.6.14",
-    "vue-server-renderer": "^2.6.14"
+    "aws-sdk": "^2.954.0",
+    "decompress": "^4.2.1",
+    "decompress-targz": "^4.1.1",
+    "nuxt": "^2.13.3"
   },
   "scripts": {
     "test": "mocha tests/unit/"
